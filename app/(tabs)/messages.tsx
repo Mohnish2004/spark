@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image, TextInput } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Search, MoreHorizontal, Phone, Video, Calendar, Paperclip, Send } from 'lucide-react-native';
+import { Search, MoveHorizontal as MoreHorizontal, Phone, Video, Calendar, Paperclip, Send } from 'lucide-react-native';
 
 const mockConversations = [
   {

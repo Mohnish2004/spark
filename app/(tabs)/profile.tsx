@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image, Switch } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Settings, Edit3, MapPin, Briefcase, Calendar, Award, Bell, Shield, HelpCircle, LogOut, ChevronRight, Users, TrendingUp, Clock, Star } from 'lucide-react-native';
+import { Settings, CreditCard as Edit3, MapPin, Briefcase, Calendar, Award, Bell, Shield, CircleHelp as HelpCircle, LogOut, ChevronRight, Users, TrendingUp, Clock, Star } from 'lucide-react-native';
 
 export default function ProfileTab() {
   const [notificationsEnabled, setNotificationsEnabled] = useState(true);
