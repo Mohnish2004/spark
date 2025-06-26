@@ -2,20 +2,37 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
-import { Camera, ArrowRight } from 'lucide-react-native';
+import { Camera, ArrowRight, ChevronLeft } from 'lucide-react-native';
 
 export default function ProfileSetup() {
   const [name, setName] = useState('');
   const [title, setTitle] = useState('');
   const [department, setDepartment] = useState('');
   const [location, setLocation] = useState('');
+  const [bio, setBio] = useState('');
 
   const handleContinue = () => {
     router.push('/onboarding/availability');
   };
 
+  const handleBack = () => {
+    router.back();
+  };
+
   return (
     <SafeAreaView style={styles.container}>
+      <View style={styles.headerNav}>
+        <TouchableOpacity style={styles.backButton} onPress={handleBack}>
+          <ChevronLeft size={24} color="#323130" />
+        </TouchableOpacity>
+        <View style={styles.progressContainer}>
+          <View style={styles.progressBar}>
+            <View style={[styles.progressFill, { width: '50%' }]} />
+          </View>
+          <Text style={styles.progressText}>Step 1 of 2</Text>
+        </View>
+      </View>
+
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <View style={styles.header}>
           <Text style={styles.title}>Create Your Profile</Text>
@@ -26,7 +43,7 @@ export default function ProfileSetup() {
 
         <View style={styles.photoSection}>
           <View style={styles.photoPlaceholder}>
-            <Camera size={32} color="#666" />
+            <Camera size={32} color="#605E5C" />
           </View>
           <TouchableOpacity style={styles.photoButton}>
             <Text style={styles.photoButtonText}>Add Photo</Text>
@@ -41,7 +58,7 @@ export default function ProfileSetup() {
               value={name}
               onChangeText={setName}
               placeholder="Enter your full name"
-              placeholderTextColor="#999"
+              placeholderTextColor="#605E5C"
             />
           </View>
 
@@ -52,7 +69,7 @@ export default function ProfileSetup() {
               value={title}
               onChangeText={setTitle}
               placeholder="e.g., Senior Product Manager"
-              placeholderTextColor="#999"
+              placeholderTextColor="#605E5C"
             />
           </View>
 
@@ -63,7 +80,7 @@ export default function ProfileSetup() {
               value={department}
               onChangeText={setDepartment}
               placeholder="e.g., Product Engineering"
-              placeholderTextColor="#999"
+              placeholderTextColor="#605E5C"
             />
           </View>
 
@@ -74,7 +91,20 @@ export default function ProfileSetup() {
               value={location}
               onChangeText={setLocation}
               placeholder="e.g., Redmond, WA"
-              placeholderTextColor="#999"
+              placeholderTextColor="#605E5C"
+            />
+          </View>
+
+          <View style={styles.inputGroup}>
+            <Text style={styles.label}>Bio</Text>
+            <TextInput
+              style={[styles.input, styles.textArea]}
+              value={bio}
+              onChangeText={setBio}
+              placeholder="Tell us about your interests, goals, and what you're looking to achieve through connections..."
+              placeholderTextColor="#605E5C"
+              multiline
+              numberOfLines={4}
             />
           </View>
         </View>
@@ -89,7 +119,7 @@ export default function ProfileSetup() {
           <Text style={[styles.continueText, (!name || !title) && styles.disabledText]}>
             Continue
           </Text>
-          <ArrowRight size={20} color={(!name || !title) ? '#999' : '#FFFFFF'} />
+          <ArrowRight size={20} color={(!name || !title) ? '#605E5C' : '#FFFFFF'} />
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -101,6 +131,43 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFFFFF',
   },
+  headerNav: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 24,
+    paddingTop: 16,
+    paddingBottom: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: '#EDEBE9',
+  },
+  backButton: {
+    width: 40,
+    height: 40,
+    borderRadius: 4,
+    backgroundColor: '#F3F2F1',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 16,
+  },
+  progressContainer: {
+    flex: 1,
+  },
+  progressBar: {
+    height: 4,
+    backgroundColor: '#EDEBE9',
+    borderRadius: 2,
+    marginBottom: 8,
+  },
+  progressFill: {
+    height: '100%',
+    backgroundColor: '#0078D4',
+    borderRadius: 2,
+  },
+  progressText: {
+    fontSize: 12,
+    fontFamily: 'Inter-Regular',
+    color: '#605E5C',
+  },
   scrollView: {
     flex: 1,
   },
@@ -111,14 +178,14 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 28,
-    fontFamily: 'Inter-Bold',
-    color: '#1A1A1A',
+    fontFamily: 'Inter-SemiBold',
+    color: '#323130',
     marginBottom: 8,
   },
   subtitle: {
     fontSize: 16,
     fontFamily: 'Inter-Regular',
-    color: '#666',
+    color: '#605E5C',
     lineHeight: 24,
   },
   photoSection: {
@@ -128,23 +195,26 @@ const styles = StyleSheet.create({
   photoPlaceholder: {
     width: 100,
     height: 100,
-    borderRadius: 50,
-    backgroundColor: '#F5F5F5',
+    borderRadius: 8,
+    backgroundColor: '#F3F2F1',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 12,
+    borderWidth: 2,
+    borderColor: '#EDEBE9',
+    borderStyle: 'dashed',
   },
   photoButton: {
     paddingHorizontal: 16,
     paddingVertical: 8,
-    borderRadius: 8,
+    borderRadius: 4,
     borderWidth: 1,
-    borderColor: '#FF6900',
+    borderColor: '#0078D4',
   },
   photoButtonText: {
     fontSize: 14,
     fontFamily: 'Inter-Medium',
-    color: '#FF6900',
+    color: '#0078D4',
   },
   form: {
     paddingHorizontal: 24,
@@ -154,37 +224,42 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 14,
-    fontFamily: 'Inter-Medium',
-    color: '#1A1A1A',
+    fontFamily: 'Inter-SemiBold',
+    color: '#323130',
     marginBottom: 8,
   },
   input: {
     borderWidth: 1,
-    borderColor: '#E0E0E0',
-    borderRadius: 8,
+    borderColor: '#EDEBE9',
+    borderRadius: 4,
     paddingHorizontal: 16,
     paddingVertical: 12,
     fontSize: 16,
     fontFamily: 'Inter-Regular',
-    color: '#1A1A1A',
+    color: '#323130',
+    backgroundColor: '#FFFFFF',
+  },
+  textArea: {
+    height: 100,
+    textAlignVertical: 'top',
   },
   footer: {
     paddingHorizontal: 24,
     paddingVertical: 16,
     borderTopWidth: 1,
-    borderTopColor: '#F0F0F0',
+    borderTopColor: '#EDEBE9',
   },
   continueButton: {
-    backgroundColor: '#FF6900',
+    backgroundColor: '#0078D4',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 16,
-    borderRadius: 12,
+    borderRadius: 4,
     gap: 8,
   },
   disabledButton: {
-    backgroundColor: '#F0F0F0',
+    backgroundColor: '#F3F2F1',
   },
   continueText: {
     fontSize: 16,
@@ -192,6 +267,6 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
   disabledText: {
-    color: '#999',
+    color: '#605E5C',
   },
 });

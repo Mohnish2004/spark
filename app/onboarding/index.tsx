@@ -8,7 +8,7 @@ export default function OnboardingWelcome() {
   return (
     <SafeAreaView style={styles.container}>
       <LinearGradient
-        colors={['#FF6900', '#FF8A3D']}
+        colors={['#0078D4', '#106EBE']}
         style={styles.gradient}
       >
         <View style={styles.content}>
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   logoCircle: {
     width: 120,
     height: 120,
-    borderRadius: 60,
+    borderRadius: 8,
     backgroundColor: 'rgba(255, 255, 255, 0.2)',
     justifyContent: 'center',
     alignItems: 'center',
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   },
   brandName: {
     fontSize: 36,
-    fontFamily: 'Inter-Bold',
+    fontFamily: 'Inter-SemiBold',
     color: '#FFFFFF',
     marginBottom: 8,
   },
@@ -97,13 +97,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     paddingHorizontal: 48,
     paddingVertical: 16,
-    borderRadius: 12,
+    borderRadius: 4,
     marginBottom: 40,
   },
   getStartedText: {
     fontSize: 16,
     fontFamily: 'Inter-SemiBold',
-    color: '#FF6900',
+    color: '#0078D4',
   },
   microsoftBranding: {
     position: 'absolute',
