@@ -2,6 +2,8 @@
 <img width="1920" alt="1" src="https://github.com/user-attachments/assets/437893d3-b568-486d-a9bc-e37a4caa988e" />
 
 **View Development Attempt:**  
+[Live link](https://www.figma.com/deck/nzvsApxCBjnJg8v6GLjUR5/Microsoft-spark?node-id=2038-22491&t=KmYsstV2KvomATon-1)
+
 While I didn’t have time to fully build the product solo, I focused heavily on design and prototyping to ensure the concept comes through clearly.  
 
 You can view the slides and demo here to explore the vision:  
