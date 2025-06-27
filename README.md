@@ -2,12 +2,15 @@
 <img width="1920" alt="1" src="https://github.com/user-attachments/assets/437893d3-b568-486d-a9bc-e37a4caa988e" />
 
 **View Development Attempt:**  
-[Live link](https://www.figma.com/deck/nzvsApxCBjnJg8v6GLjUR5/Microsoft-spark?node-id=2038-22491&t=KmYsstV2KvomATon-1)
+
+
+https://github.com/user-attachments/assets/7635b1f0-4ebf-4124-9a10-12b7cae6a87a
+
 
 While I didn’t have time to fully build the product solo, I focused heavily on design and prototyping to ensure the concept comes through clearly.  
 
 You can view the slides and demo here to explore the vision:  
-[View Slides & Prototypes](https://www.figma.com/deck/nzvsApxCBjnJg8v6GLjUR5/Microsoft-spark?node-id=2038-22491&t=KmYsstV2KvomATon-1)
+👉 [View Slides & Prototypes](https://embed.figma.com/deck/nzvsApxCBjnJg8v6GLjUR5/Microsoft-spark?node-id=32-98&viewport=-116%2C-42%2C0.55&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&embed-host=share)
 
 ---
 
